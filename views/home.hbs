@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="../public/css/style.css">
+<div>
+    <div class="conteiner">
+        <H1 id="titulo">Pomodoro</H1>
+        <p id="resultado"></p>
+    </div>
+    <div>
+        <div id="relogio">
+            <h2 id="Cont">
+                </h1>
+        </div>
+
+        <div id="centralizacock">
+            <div id="cock">
+                <span id="min">
+                    00
+                </span>
+                    :
+                <span id="sec">
+                    00
+                </span>
+
+            </div>
+        </div>
+        <div class="container">
+            <button class="title" id="start_btn" onclick="iniciar()">INICIAR</button>
+            <div class="input-number">
+                <input type="number"  id="tempo" value="">
+                <div class="input-number-actions">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <footer id="rodape">
+        <br>
+        <p class="texto">1 pomodoro = 25 minutos</p>
+        <p class="texto">Cada set conta para sua estatistica mensal</p>
+    </footer>
+
+
+</div>
+
+<script>
+
+    var play = false
+    function iniciar() {
+
+
+        if(play) return 
+        play = true
+        let timeElement = document.getElementById("tempo")
+        let timeTarget = timeElement.value
+        console.log(timeTarget)
+
+        
+    
+        //let minutos = parseInt(document.getElementById("min").innerText);
+        // let segundos = parseInt(document.getElementById("sec").innerText);
+        let minutos = timeTarget
+        let segundos = 0
+
+        let intervalo = setInterval(function () {
+
+            if (segundos === 0) {
+                if (minutos === 0) {
+                    clearInterval(intervalo);
+                    alert("Tempo finalizado, VAI DESCANSAR!");
+                } else {
+                    minutos--;
+                    segundos = 59;
+                }
+            } else {
+                segundos--;
+            }
+
+            // atualiza no HTML
+            document.getElementById("min").innerText = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("sec").innerText = segundos < 10 ? "0" + segundos : segundos;
+
+        }, 1000);
+    }
+</script>
