@@ -54,7 +54,7 @@
     var controle = true;
 
 
-
+    //Funça para iniciar o Pomodoro
     function iniciar() {
         if(play) return 
         play = true
@@ -64,7 +64,9 @@
 
         let minutos = timeTarget
         let segundos = 0
-
+        
+        
+        //Logica do cronometro
         let intervalo = setInterval(function () {
             if(controle){
             if (segundos === 0) {
