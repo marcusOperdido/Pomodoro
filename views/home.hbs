@@ -23,9 +23,9 @@
             </div>
         </div>
         <div class="container">
-            <button class="title" id="start_btn" onclick="iniciar()">PAUSAR</button>
-            <button class="title" id="pause" value="1">INICIAR</button>
-             
+            <button class="title" id="pause" value="1" onclick="pausar()" >PAUSAR</button>
+             <button class="title" id="start_btn" onclick="iniciar()">INICIAR</button>
+
             <div class="input-number">
                 <input type="number"  id="tempo" value="">
                 <div class="input-number-actions">
@@ -45,9 +45,16 @@
 </div>
 
 <script>
+    
 
 
+
+    //variaveis de controle
     var play = false
+    var controle = true;
+
+
+
     function iniciar() {
         if(play) return 
         play = true
@@ -59,7 +66,7 @@
         let segundos = 0
 
         let intervalo = setInterval(function () {
-
+            if(controle){
             if (segundos === 0) {
                 if (minutos === 0) {
                     clearInterval(intervalo);
@@ -71,11 +78,21 @@
             } else {
                 segundos--;
             }
-
+            }
             // atualiza no HTML
             document.getElementById("min").innerText = minutos < 10 ? "0" + minutos : minutos;
             document.getElementById("sec").innerText = segundos < 10 ? "0" + segundos : segundos;
 
         }, 1000);
+     
+     
+   
+    
     }
+
+  //função para pausar o cronometro
+    function pausar(){
+        controle = !controle; //muda o valor de nao para sim e virce versa
+    } 
+
 </script>
