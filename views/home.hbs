@@ -23,7 +23,9 @@
             </div>
         </div>
         <div class="container">
-            <button class="title" id="start_btn" onclick="iniciar()">INICIAR</button>
+            <button class="title" id="start_btn" onclick="iniciar()">PAUSAR</button>
+            <button class="title" id="pause" value="1">INICIAR</button>
+             
             <div class="input-number">
                 <input type="number"  id="tempo" value="">
                 <div class="input-number-actions">
@@ -44,20 +46,15 @@
 
 <script>
 
+
     var play = false
     function iniciar() {
-
-
         if(play) return 
         play = true
         let timeElement = document.getElementById("tempo")
         let timeTarget = timeElement.value
         console.log(timeTarget)
 
-        
-    
-        //let minutos = parseInt(document.getElementById("min").innerText);
-        // let segundos = parseInt(document.getElementById("sec").innerText);
         let minutos = timeTarget
         let segundos = 0
 
