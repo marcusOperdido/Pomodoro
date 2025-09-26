@@ -1,9 +1,24 @@
+<header>
+<div id="cabeca">
+<button class="title" id="teste">LOGIN</button>
+<button class="title" id="botaogf">GRAFICOS</button>
+
+
+</div>
+</header>
+
 <link rel="stylesheet" href="../public/css/style.css">
-<div>
+<div id="relogio">
     <div class="conteiner">
         <H1 id="titulo">Pomodoro</H1>
         <p id="resultado"></p>
     </div>
+   
+   
+   
+    
+    
+    <!--fazer botao de mudar cor -->
     <div>
         <div id="relogio">
             <h2 id="Cont">
@@ -44,11 +59,24 @@
 
 </div>
 
+<div id="graficos">
+<div id="main" style="width: 600px;height:400px;"></div>  
+
+<div id="graficotwo" style="width: 600px;height:400px;"></div>  
+</div>
+
+
+
+<div id="pagamentos">
+    <h1 id="ox">Pagamentos e explicaçoes</h1>
+
+    <!--colocar o mucego-->
+
+
+</div>
+
+
 <script>
-    
-
-
-
     //variaveis de controle
     var play = false
     var controle = true;
@@ -94,5 +122,57 @@
     function pausar(){
         controle = !controle; //muda o valor de nao para sim e virce versa
     } 
+
+
+//--------------------------------------------------------------------------------------------
+                    //INICIANDO GRAFICOS
+    var chartDom = document.getElementById('main');
+  var myChart = echarts.init(chartDom);
+  var option;
+
+  option = {
+    xAxis: {
+      type: 'category',
+      data: ['Seg', 'Ter', 'Qua', 'Quin', 'Sex', 'Sab', 'Dom']
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [
+      {
+        data: [150, 230, 224, 218, 135, 147, 260], //linkar e programar um contador pmodoro
+        //jogar pra um DB para salvar os dados de pomodoros feitos
+        type: 'line'
+      }
+    ]
+  };
+  myChart.setOption(option);
+   
+ 
+ 
+ 
+    var chartDom = document.getElementById('graficotwo');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+    xAxis: {
+      type: 'category',
+      data: ['Seg', 'Ter', 'Qua', 'Quin', 'Sex', 'Sab', 'Dom']
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [
+      {
+        data: [150, 230, 224, 218, 135, 147, 260], //linkar e programar um contador pmodoro
+        //jogar pra um DB para salvar os dados de pomodoros feitos
+        type: 'line'
+      }
+    ]
+  };
+  myChart.setOption(option);
+
+
 
 </script>
