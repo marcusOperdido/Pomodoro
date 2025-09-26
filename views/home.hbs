@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="container">
-            <button class="title" id="pause" value="1" onclick="pausar()" >PAUSAR</button>
+            <button class="title" id="pause" onclick="pausar()" >PAUSAR</button>
              <button class="title" id="start_btn" onclick="iniciar()">INICIAR</button>
 
             <div class="input-number">
@@ -82,7 +82,7 @@
     var controle = true;
 
 
-
+    //Funça para iniciar o Pomodoro
     function iniciar() {
         if(play) return 
         play = true
@@ -92,7 +92,9 @@
 
         let minutos = timeTarget
         let segundos = 0
-
+        
+        
+        //Logica do cronometro
         let intervalo = setInterval(function () {
             if(controle){
             if (segundos === 0) {
