@@ -25,6 +25,91 @@ body::-webkit-scrollbar {
 display: none;           /* Chrome, Safari, Edge */
 }
 
+/* Css do meu bota de mudar as cores*/
+.switch {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.switch + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+/* Tamanho do botao*/
+
+#alinharbotao{
+  margin-right: auto;  /* o display da div esta no row reverse*/
+  display: flex;
+  align-items: center;
+}
+
+
+.switch--shadow + label {
+  padding: 2px;
+  width: 60px;
+  height: 30px;
+  background-color: #dddddd;
+  border-radius: 60px;
+}
+
+switch--shadow + label:before,
+.switch--shadow + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: '';
+}
+.switch--shadow + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 60px;
+  transition: all 0.4s;
+}
+.switch--shadow + label:after {
+  width: 30px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+.switch--shadow:checked + label:before {
+  background-color: #8ce196;
+}
+.switch--shadow:checked + label:after {
+  transform: translateX(30px);
+}
+
+body:has(input:checked) {
+    background-color: #000000;
+    color: white;
+  }
+
+  #titulo:has(input:checked) {
+    background-color: #333;
+    color: white;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #teste{
   background: linear-gradient(70deg, #000000, #17193b);
   box-shadow: 0;
@@ -45,11 +130,21 @@ display: none;           /* Chrome, Safari, Edge */
 #cabeca {
     height: 55px;
     width: 100%;
-    background-color:  #000000;
+    background-color: #000000;
     display: flex;
     flex-direction: row-reverse;
-    align-items: stretch;
+
 }
+
+#cabeca .item-esquerda {
+    margin-right: auto; /* empurra tudo que vem depois para a direita */
+}
+
+#cabeca .item-direita {
+    margin-left: 10px; /* espaço entre os da direita */
+}
+
+
 
 
 #cabeca:hover button {
