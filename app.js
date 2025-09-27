@@ -1,11 +1,13 @@
 import express from "express";
 import { engine } from "express-handlebars";
 
+import pomodoroRouter from "./src/routes/pomodoro.js"
+
 const app = express();
 const PORT = process.env.PORT || 3030;
 
 
-
+app.use("/pomodoro", pomodoroRouter)
 //CSS
 app.use(express.static("public"));
 
@@ -15,12 +17,12 @@ app.engine(
   engine({
     extname: ".hbs",
     defaultLayout: "main", // layout padrão
-    layoutsDir: "./views/layouts", // pasta dos layouts
-    partialsDir: "./views/partials" // pasta dos partials
+    layoutsDir: "./src//views/layouts", // pasta dos layouts
+    partialsDir: "./src/views/partials" // pasta dos partials
   })
 );
 app.set("view engine", "hbs");
-app.set("views", "./views");
+app.set("views", "./src/views");
 
 
 
