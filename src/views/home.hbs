@@ -1,0 +1,99 @@
+<header>
+  <div id="cabeca">
+    <button class="title" id="teste">LOGIN</button>
+    <button class="title" id="botaogf">GRAFICOS</button>
+
+
+
+
+    <div class="switch__container" id="alinharbotao">
+      <input id="switch-shadow" class="switch switch--shadow" type="checkbox" />
+      <label for="switch-shadow"></label>
+    </div>
+
+
+  </div>
+</header>
+
+<link rel="stylesheet" href="../public/css/style.css">
+<div id="relogio">
+  <div class="conteiner">
+    <H1 id="titulo">Pomodoro</H1>
+    <p id="resultado"></p>
+
+
+
+
+
+  </div>
+
+
+  <div>
+
+
+    <div id="relogio">
+      <h2 id="Cont">
+        </h1>
+    </div>
+
+    <div id="centralizacock">
+      <div id="cock">
+        <span id="min">
+          00
+        </span>
+        :
+        <span id="sec">
+          00
+        </span>
+
+      </div>
+    </div>
+    <div class="container">
+      <button class="title" id="reset_btn" onclick="pomodoro.reset()">RESET</button>
+      <button class="title" id="pause" onclick="pomodoro.isPause ? pomodoro.retake() : pomodoro.pause()">PAUSAR/RETOMAR</button>
+      <button class="title" id="start_btn" onclick="pomodoro.init()">INICIAR</button>
+
+      <div class="input-number">
+        <input type="number" id="tempo" value="">
+        <div class="input-number-actions">
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <footer id="rodape">
+    <br>
+    <p class="texto">1 pomodoro = 25 minutos</p>
+    <p class="texto">Cada set conta para sua estatistica mensal</p>
+  </footer>
+
+
+</div>
+
+<div id="graficos">
+  <div id="main" style="width: 600px;height:400px;"></div>
+
+  <div id="graficotwo" style="width: 600px;height:400px;"></div>
+</div>
+
+
+
+<div id="pagamentos">
+  <h1 id="ox">Pagamentos e explicaçoes</h1>
+
+  <!--colocar o mucego-->
+
+
+</div>
+
+<script src="./js/app/helpers/getToday.js"></script>
+<script src="./js/app/models/chartOption.js"></script>
+<script src="./js/app/controllers/pomodoroController.js"></script>
+<script src="./js/app/controllers/graphicController.js"></script>
+<script>
+
+    const pomodoro = new Pomodoro();
+
+
+</script>
