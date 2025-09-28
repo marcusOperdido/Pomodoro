@@ -5,8 +5,8 @@
   "main": "principal.js",
   "type": "module",
   "scripts": {
-    "start": "node principal.js",
-    "dev": "nodemon principal.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
