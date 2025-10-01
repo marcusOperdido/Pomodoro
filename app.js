@@ -1,15 +1,21 @@
+// IMPORTS
 import express from "express";
 import { engine } from "express-handlebars";
 
-import pomodoroRouter from "./src/routes/pomodoro.js"
+import pomodoro from "./src/routes/pomodoro.js"
 
 const app = express();
 const PORT = process.env.PORT || 3030;
 
 
-app.use("/pomodoro", pomodoroRouter)
+
+
+
+
 //CSS
 app.use(express.static("public"));
+
+
 
 // Configurar Handlebars
 app.engine(
@@ -32,11 +38,12 @@ app.use(express.json());
 
 
 
-// Rota
+// Rotas
 app.get("/", (req, res) => {
   res.render("home");
 });
 
+app.use("/pomodoro", pomodoro);
 
 
 

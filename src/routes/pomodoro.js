@@ -1,9 +1,16 @@
 import express from "express";
-//import mongoose from "mongoose";
 
+
+//import mongoose from "mongoose";
 const router = express.Router();
 export default router;
+
+
 
 router.get('/', (req, res) => {
     res.send({ ok: true })
 });
+
+router.get("/login", function(req,res){
+    res.render("pomodoro/login")
+})
