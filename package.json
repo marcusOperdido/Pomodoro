@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "echarts": "^6.0.0",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.1",
