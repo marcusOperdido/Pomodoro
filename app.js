@@ -1,51 +1,64 @@
+//revisar
 // IMPORTS
 import express from "express";
 import { engine } from "express-handlebars";
+import mongoose from "mongoose";
+import flash from "connect-flash";
+import session from "express-session";
 
-import pomodoro from "./src/routes/pomodoro.js"
+import pomodoro from "./src/routes/pomodoro.js";
+import usuarios from "./public/js/app/models/Usuarios.js";
 
 const app = express();
 const PORT = process.env.PORT || 3030;
 
+// Conexão MongoDB
+mongoose
+  .connect("mongodb://localhost:27017/pomodoroDB")
+  .then(() => console.log("✅ Conectado ao MongoDB"))
+  .catch((err) => console.log("Erro MongoDB: " + err));
 
-
-
-
-
-//CSS
+// CSS
 app.use(express.static("public"));
 
+// Sessão e Flash
+app.use(
+  session({
+    secret: "segredo",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use(flash());
 
+// Middleware Flash (mensagens)
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  next();
+});
 
 // Configurar Handlebars
 app.engine(
   "hbs",
   engine({
     extname: ".hbs",
-    defaultLayout: "main", // layout padrão
-    layoutsDir: "./src//views/layouts", // pasta dos layouts
-    partialsDir: "./src/views/partials" // pasta dos partials
+    defaultLayout: "main",
+    layoutsDir: "./src/views/layouts",
+    partialsDir: "./src/views/partials",
   })
 );
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 
-
-
-// Middleware
+// Middleware para formulários
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
 // Rotas
-app.get("/", (req, res) => {
-  res.render("home");
-});
-
+app.get("/", (req, res) => res.render("home"));
 app.use("/pomodoro", pomodoro);
-
-
+app.use("/usuarios", usuarios);
 
 // Inicializar servidor
 app.listen(PORT, () => {

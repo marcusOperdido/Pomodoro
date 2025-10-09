@@ -12,6 +12,8 @@ class Pomodoro {
     #myChart;
     #option;
 
+
+    //constructor para ser usado por pessoa
     constructor() {
         const $ = document.querySelector.bind(document);
 
@@ -32,6 +34,9 @@ class Pomodoro {
 
         this.#option = new Option();
     }
+
+
+
 
     // meus metodos publicos
     init() {
@@ -74,10 +79,17 @@ class Pomodoro {
     };
 
 
+
+
+
     // getter para verificar se esta rodando
     get isRunning() {
         return this.#play;
     };
+
+
+
+
 
     // getter para verificar se esta pausado
     get isPause() {
@@ -87,7 +99,7 @@ class Pomodoro {
 
 
 
-    // meotdos privados
+    // Coraão do Cronometro! aqui faz rodar as atualizaoes de sgeundos...
     #startTimer() {
         this.#interval = setInterval(() => {
 
@@ -125,13 +137,20 @@ class Pomodoro {
         clearInterval(this.#interval);
         this.#play = false;
         this.#interval = null;
+
+        //melhorar esse alerta de descanso
         alert("Tempo finalizado, VAI DESCANSAR!");
 
-        // Atualiza o grafico 
-        const option = this.#option.setOption(this.#minutos);
-        this.#myChart.setOption(option);
 
-    };
-};
+        
+    // condicional tempo
+       if (this.#minutos === 25) {
+        const option = this.#option.setOption(1);
+        this.#myChart.setOption(option);
+    } else {
+        console.log("Não contou pomodoro: tempo diferente de 25 minutos.");
+        }
+    }
+}
 
 window.Pomodoro = Pomodoro;

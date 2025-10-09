@@ -22,8 +22,6 @@ class Option {
             series: [
                 {
                     data: [], // vazio por padrão taaa
-                    //jogar pra um DB para salvar os dados de pomodoros feitos
-                    // Mais tarde da para fazer SIM, vai ficar facil na verdade
                     type: 'line'
                 }
             ]
@@ -36,7 +34,7 @@ class Option {
 
         const todayStr = getToday.shortToday();
         if (!this.#dates.includes(getToday.today())) {
-            this.#dates.push()
+            this.#dates.push(getToday.today());  //mud
         }
         // Caso já tenha um pomodoro nesse dia, ele irá apenas somar
         if (xAxisData.includes(this.#today) && this.#today === todayStr) {

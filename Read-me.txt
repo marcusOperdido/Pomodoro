@@ -5,8 +5,15 @@ Claro, do momento de onde estamos, até o momento final!
 
 ---------------------------------------------------------------------
 
-1-- Realizar pagina de Login
+1-- Realizar pagina de Login ''Okay''
+
 2-- Iniciar DB Banco de dados
+
+  ----o objetivo é iniciar a conexao entre o mongo e o echarts, assim como criar a abela para o echats aterar sempre o grafico
+
+
+
+
 3-- Conexões pagina login com Banco de dados
 4-- Conexoes banco de dados com gráficos
 5--Iniciar parte cobranças, procurar bibliotecas de cobranças
