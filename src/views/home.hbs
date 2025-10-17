@@ -38,17 +38,21 @@
       </div>
 
 
-    </div>
+  </div>
   </div>
   <footer id="rodape">
     <br>
     <p class="texto">1 pomodoro = 25 minutos</p>
     <p class="texto">Cada set conta para sua estatistica mensal</p>
   </footer>
-
-
 </div>
 
+
+
+<!--necessario fazer conexão para login-->
+
+
+{{#if  logado}}
 <div id="graficos">
   <div id="main" style="width: 600px;height:400px;"></div>
 
@@ -64,6 +68,10 @@
 
 
 </div>
+{{else}}
+{{/if}}
+
+
 
 <script src="./js/app/helpers/getToday.js"></script>
 <script src="./js/app/models/chartOption.js"></script>

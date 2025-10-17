@@ -1,10 +1,9 @@
 //pagina feita totalmente por ia, necessário revisão com urgencia esta redundante com o pomodoro.js
 
-
 import express from "express";
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
-import Usuario from "../models/Usuario.js";
+import Usuario from "../../models/Usuarios";
 import passport from "passport";
 
 const router = express.Router();

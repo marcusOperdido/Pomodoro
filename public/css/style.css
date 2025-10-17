@@ -113,13 +113,10 @@ body:has(input:checked) #titulo{
 
 
 
-
-
-
-
-
-
-
+#Linkregistro{
+  text-decoration: none;
+  color: white;
+}
 
 
 #teste{

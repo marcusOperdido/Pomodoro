@@ -7,7 +7,8 @@ import flash from "connect-flash";
 import session from "express-session";
 
 import pomodoro from "./src/routes/pomodoro.js";
-import usuarios from "./public/js/app/models/Usuarios.js";
+import usuarios from "./models/Usuarios.js";
+
 
 const app = express();
 const PORT = process.env.PORT || 3030;
@@ -59,6 +60,7 @@ app.use(express.json());
 app.get("/", (req, res) => res.render("home"));
 app.use("/pomodoro", pomodoro);
 app.use("/usuarios", usuarios);
+app.get("")
 
 // Inicializar servidor
 app.listen(PORT, () => {
