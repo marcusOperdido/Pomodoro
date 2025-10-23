@@ -1,3 +1,4 @@
+
 *,
 *:after,
 *:before {
@@ -6,18 +7,21 @@
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
-  text-decoration: none;
-  
-  
+  text-decoration: none !important;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
+
+
+
 body{
-background-color: #B3C186;;
+background-color: #b3b4ae;
 overflow-x: hidden;
 overflow-y: scroll;      /* mantém o scroll vertical */
-scrollbar-width: none;   /* Firefox */
-
-          
+scrollbar-width: none;   /* Firefox */         
 }
+
+
+
 
 html::-webkit-scrollbar, 
 body::-webkit-scrollbar {
@@ -46,6 +50,20 @@ display: none;           /* Chrome, Safari, Edge */
   display: flex;
   align-items: center;
 }
+
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: baseline;
+    
+    
+    
+}
+
+
+
 
 
 .switch--shadow + label {
@@ -100,6 +118,29 @@ body:has(input:checked) {
 }
 
 
+/*Area Botoes*/
+#alinhamento{
+  margin-top: 200px;
+  text-align: center;
+}
+.botoes {
+  text-align: center;
+  background-color: #7a1818;
+  background-color: transparent; /* tira o fundo branco */
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.3s, transform 0.2s;
+  
+}
+
+.botoes:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+
 
 
 /*faz as cores de alguns itens acompanharem*/
@@ -112,22 +153,6 @@ body:has(input:checked) #titulo{
 }
 
 
-
-#Linkregistro{
-  text-decoration: none;
-  color: white;
-}
-
-
-#teste{
-  background: linear-gradient(70deg, #000000, #17193b);
-  box-shadow: 0;
-  color: white;
-}
-#botaogf{
-  background-color: #000000;
-  color: #fff;
-}
 #titulo{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -136,10 +161,12 @@ body:has(input:checked) #titulo{
     font-size: 70px;
 }
 
+
+/*Navbar*/
 #cabeca {
     height: 55px;
     width: 100%;
-    background-color: #000000;
+    background-color: #ebcfcf00;
     display: flex;
     flex-direction: row-reverse;
 
@@ -195,62 +222,6 @@ body:has(input:checked) #titulo{
     justify-content: center;
 }
 
-#botao{
-  min-width: 30px;
-  min-height: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px;
-  font: 700 10px 'Nunito', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  text-align: center;
-  color: #313133;
-
-  background: linear-gradient(90deg, #43857c 0%, #4fd1c5 100%);
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-
-  cursor: pointer;
-  transition: .3s ease-in-out;
-  outline: none;
-  position: relative;
-}
-
-#imput{
-    border: 0;
-}
-#conteiner{
-    width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  padding: 1rem;
-}
-
-
-#acoes{
-    display: flex;
-    gap: 0,6rem;
-    justify-content: center;
-}
-
-.bottao{
-    padding: 0,6;
-    width: 48px;
-    height: 48px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #4c0677;
-    color: #fff;
-}
-
 .container {
    margin-top: 100px;
    margin-bottom: 100px;
@@ -264,6 +235,8 @@ body:has(input:checked) #titulo{
   flex-direction: row-reverse;
 }
 
+
+/* botoes iniciar pause e reset */
 .title {
   padding: 0.8rem 1rem;
   border-radius: 6px;
@@ -314,8 +287,6 @@ button {
   cursor: pointer;
 }
 
-
-
 #graficos {
     display: flex;
     width: 100%;
@@ -339,9 +310,4 @@ button {
   font-weight: bold;
   color: #7a1818;
   text-align: center;
-}
-
-
-#titulops{
-  color: #680f0f;
 }

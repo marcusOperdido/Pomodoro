@@ -25,7 +25,7 @@ app.use(express.static("public"));
 // Sessão e Flash
 app.use(
   session({
-    secret: "segredo",
+    secret: "marses1211",
     resave: true,
     saveUninitialized: true,
   })

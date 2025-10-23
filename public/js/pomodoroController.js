@@ -14,6 +14,7 @@ class Pomodoro {
 
 
     //constructor para ser usado por pessoa
+    
     constructor() {
         const $ = document.querySelector.bind(document);
 
@@ -38,14 +39,14 @@ class Pomodoro {
 
 
 
-    // meus metodos publicos
+//Botoes iniciar 
     init() {
         if (this.#play) return;
 
         this.#play = true
 
         const timeTarget = parseInt(this.#timeElement.value);
-        if (isNaN(timeTarget) || timeTarget <= 0) {
+        if (isNaN(timeTarget) || timeTarget < 0) {
             alert("Digite um tempo válido!")
             window.location.reload();
         }
