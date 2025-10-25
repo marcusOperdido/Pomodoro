@@ -1,0 +1,12 @@
+<h1>Usuários cadastrados</h1>
+{{usuarios.nome}}
+
+{{#if usuarios}}
+  <ul>
+    {{#each usuarios}}
+      <li>{{nome}} - {{email}} - {{senha}} - {{eAdmin}}</li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>Nenhum usuário cadastrado.</p>
+{{/if}}

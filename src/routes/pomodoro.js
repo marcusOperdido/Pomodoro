@@ -16,6 +16,12 @@ router.get("/login", function (req, res) {
 });
 
 
+router.get("/graficos", function(req, res){
+  res.render("pomodoro/graficos")
+})
+
+
+
 router.post("/login", ValidadorDeLogin);
 
 

@@ -4,6 +4,8 @@ import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcryptjs";
 import Usuario from "/models/Usuario.js";
 
+
+
 export default function (passport) {
   passport.use(
     new LocalStrategy({ usernameField: "email" }, (email, senha, done) => {

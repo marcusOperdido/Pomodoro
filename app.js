@@ -5,6 +5,7 @@ import { engine } from "express-handlebars";
 import mongoose from "mongoose";
 import flash from "connect-flash";
 import session from "express-session";
+import admin from "./src/routes/admin.js"
 
 import pomodoro from "./src/routes/pomodoro.js";
 import usuarios from "./models/Usuarios.js";
@@ -58,6 +59,7 @@ app.use(express.json());
 
 // Rotas
 app.get("/", (req, res) => res.render("home"));
+app.use("/admin", admin)
 app.use("/pomodoro", pomodoro);
 app.use("/usuarios", usuarios);
 app.get("")

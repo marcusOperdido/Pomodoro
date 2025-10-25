@@ -1,16 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const botoes = [
-    
-    { id: "botaogfLogin", msg: "Você clicou no botão LOGAR!" },
-    
-    
-  ];
+  function abrirModal() {
+    document.getElementById("loginModal").classList.add("show");
+  }
 
-  botoes.forEach(botao => {
-    const el = document.getElementById(botao.id);
-    if (el) {
-      el.addEventListener("click", () => alert(botao.msg));
-    }
-  });
-});
+  function fecharModal() {
+    document.getElementById("loginModal").classList.remove("show");
+  }
 
+  // Fecha ao clicar fora
+  window.onclick = function (e) {
+    const modal = document.getElementById("loginModal");
+    if (e.target === modal) modal.classList.remove("show");
+  };

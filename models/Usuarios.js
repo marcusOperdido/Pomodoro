@@ -1,34 +1,28 @@
 
-//Criação de arquivos DB para login
-    //MongoDB
-
 import mongoose from 'mongoose';
 
-
-
 const usuarioSchema = new mongoose.Schema({
-    nome:{
-        type: String,
-        requere: true,
-        },
-        email:{
-        type: String,
-        requere: true,
-        },
-        senha:{
-        type: String,
-        requere: true,
-        },
-        eAdmin:{
-            type: Number,
-            default:0 //ele ja entra 0 aertando que nao é admin
-        }
-})
+  nome: {
+    type: String,
+    required: true, // <-- corrigido
+  },
+  email: {
+    type: String,
+    required: true, // <-- corrigido
+  },
+  senha: {
+    type: String,
+    required: true, // <-- corrigido
+  },
+  eAdmin: {
+    type: Number,
+    default: 0 // 0 = usuário comum, 1 = admin
+  }
+});
 
-const Usuario = mongoose.model("Usuario", usuarioSchema);
+// Aqui definimos explicitamente o nome da coleção como "usuarios"
+const Usuario = mongoose.model("usuarios", usuarioSchema);
 
 export default Usuario;
-
-
 
 
