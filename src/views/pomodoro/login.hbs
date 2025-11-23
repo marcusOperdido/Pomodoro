@@ -1,0 +1,45 @@
+{{#each erros}}
+        <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+
+{{/each}}
+
+
+
+<div class="text-center mt-5 ">
+<h3 class="">Cadastre sua conta</h3>
+</div>
+<div class="container mt-4 col">  
+    <div class="card w-50 ms-0" >
+        <div class="card-body">
+            <form action="registro" method="POST" >
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" class="form-control mb-2">
+                
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="form-control mb-2">
+                
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" class="form-control mb-2">
+                
+                <label for="senha2">Repita sua senha:</label>
+                <input type="password" name="senha2" class="form-control mb-2">
+                
+                <button class="btn btn-success mt-3 w-100" type="submit" >Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center lead">
+  <h3 class="mb-2 d-block">Como funciona o cadastro</h3>
+  <hr>
+  <p class="lead d-block">Coletamos seus dados como <lead>Email</lead> e <lead>nome completo</lead> para inserir em nosso banco de dados</p>
+  <p>Atrelamos esse cadastro aos dados coletados de sets de estudos para serem utilizados e fazer medias para estudo pessoal</p>
+  <p>Assim como faremos liberação -(quando nosso lindo programer programa essa parte)- a liberação da monra, que é a ia atrelada a inteligencia artificial para melhorar o estudo </p>
+  <p>**O Pagamento sera aceito via pix, ele é relacionado ao custo do servidor de dados, que é o que manten esse treco aqui rodando e a monra... BONNS ESTUDOS**</p>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

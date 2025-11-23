@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/css/style.css">
+
+
+<header>
+  <!-- refatorar botoes de login e logout-->
+  <div id="cabeca">
+    
+     
+    {{#if user}}
+      <a href="pomodoro/logout" class="botoes">SAIR</a>
+    {{else}}
+      <a href="#" id="logar" class="botoes" onclick="abrirModal()">LOGAR</a>
+      <a href="/pomodoro/login" class="botoes">REGISTRAR-SE</a>
+      
+    {{/if}}
+   <a href="/" class="botoes" id="Linkregistro">POMODORO</a>
+   
+   
+    <a href="/pomodoro/graficos" class="botoes">PERFIL e GRAFICOS</button></a>
+
+    <div class="switch__container" id="alinharbotao">
+      <input id="switch-shadow" class="switch switch--shadow" type="checkbox" />
+      <label for="switch-shadow"></label>
+    </div>
+  </div>
+</header>
+
+
+
+
+<!-- Modal de login (fica escondido por padrão) -->
+<!-- Modal de Login -->
+
+<div class="modal" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Login</h5>
+        <button class="close-btn" onclick="fecharModal()">×</button>
+      </div>
+    
+      <div class="modal-body" >
+        <form action="pomodoro/logar" method="post"> 
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+          </div>
+          <button type="submit" class="btn">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--importaçoes de script-->
+<script src="/js/sobreposicaoLogin.js"></script>
+<script src="/controllers/controledesessao.js"></script>

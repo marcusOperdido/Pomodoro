@@ -1,0 +1,29 @@
+Opa esse é o projeto pomodoro.
+
+Caso queira ajudar estou colocando os passos necessarios para seguir no projeto.
+Claro, do momento de onde estamos, até o momento final!
+
+---------------------------------------------------------------------
+
+1-- Realizar pagina de Login ''Okay''
+
+2-- Iniciar DB Banco de dados
+
+  ----o objetivo é iniciar a conexao entre o mongo e o echarts, assim como criar a abela para o echats aterar sempre o grafico
+
+
+
+
+3-- Conexões pagina login com Banco de dados
+4-- Conexoes banco de dados com gráficos
+5--Iniciar parte cobranças, procurar bibliotecas de cobranças
+(a cobrança sera diretamente realionada ao tanto que custar manter o site, nao será para ucro inicialmente)
+6-- Iniciar Área "Monra" como um dropdown ao lado do relogio
+7-- retoques nos pagamentos e cobranças
+
+
+------------Lançamento------------------
+
+
+
+Ao longo do tempo os retoques serão feitos após o lançamento
