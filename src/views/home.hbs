@@ -1,0 +1,78 @@
+
+
+<div id="relogio">
+  <h2 id="Cont"></h2>
+</div>
+
+
+
+
+
+
+<div id="alinhamento">
+<div id="botoes">
+  <button type="button" class="botoes alterartempo"  id="Pomodoro">Pomodoro</button>
+  <button type="button" class="botoes alterartempo"  id="Descanso">Descanso</button>
+  <button type="button" class="botoes alterartempo"  id="DescansoLongo">Descanso longo</button>
+</div>
+</div>
+
+
+<div id="centralizacock">
+  <div id="cock">
+    <span id="min">00</span>
+    <span>:</span>
+    <span id="sec">00</span>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <button class="title" onclick="pomodoro.reset()">RESET</button>
+  <button class="title" id="pause"
+    onclick="pomodoro.isPause ? pomodoro.retake() : pomodoro.pause()">PAUSAR/RETOMAR</button>
+  <button class="title" onclick="pomodoro.init()">INICIAR</button>
+
+  <div class="input-number">
+    <input type="number" id="tempo" value="">
+    <div class="input-number-actions">
+    </div>
+  </div>
+
+
+</div>
+</div>
+<footer id="rodape">
+  <br>
+  <p class="texto">1 pomodoro = 25 minutos</p>
+  <p class="texto">Cada set conta para sua estatistica mensal</p>
+</footer>
+</div>
+
+
+
+
+
+
+
+
+<!--revisar poeque o main é o dono do codigo-->
+<div id="graficos">
+  
+
+  <div id="main" style="width: 600px;height:400px;"></div>
+</div>
+
+
+
+
+
+<script src="/js/teste.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script src="/js/getToday.js"></script>
+<script src="/models/chartOption.js"></script>
+<script src="/js/pomodoroController.js"></script>
+<script>window.pomodoro = new Pomodoro();</script> 
+<script src="/js/botoes.js"></script>
