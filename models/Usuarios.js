@@ -1,4 +1,3 @@
-import { number } from 'echarts';
 import mongoose from 'mongoose';
 
 const usuarioSchema = new mongoose.Schema({

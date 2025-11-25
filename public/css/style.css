@@ -316,8 +316,15 @@ button {
 
 
 
+#centraizarPomodoro{
+      display: flex;
+    justify-content: center;
+    
+}
 
-
+#main{
+  align-items: center;
+}
 
 
 
